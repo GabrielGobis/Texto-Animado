@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    height: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(31, 31, 31);
+    color: white;
+}
+
+.texto{
+    font-size: 45px;
+    font-weight: 300;
+}
+
+.texto span{
+    position: relative;
+}
+
+.texto span::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-left: 2px solid white;
+    right: -10px;
+    opacity: 1;
+    animation: cursor .8s infinite, revelar 20s steps(100) infinite;
+    width: calc(100% + 18px);
+    background-color: rgb(31, 31, 31);
+}
+
+.texto span::before{
+    content: "";
+    color: rgb(27, 152, 253);
+    animation: palavras 20s infinite;
+}
+
+@keyframes revelar{
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{
+        width: 0;
+
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85%{
+        width: calc(100% + 18px);
+    }
+
+}
+
+@keyframes cursor{
+    0%{
+        border-left: 2px solid rgba(31, 31, 31);
+    }
+}
+
+@keyframes palavras{
+    0%, 25%{
+        content: "acessou novas informações do nosso site?";
+    }
+
+    26%, 50%{
+        content: "já viu nossas promoções?";
+    }
+
+    46%, 75%{
+        content: "está gostando de nossos serviços?";
+    }
+
+    86%, 100%{
+        content: "o que você achou da empresa?";
+    }
+
+}
